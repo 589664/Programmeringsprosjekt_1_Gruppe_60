@@ -1,0 +1,40 @@
+\documentclass[]{article}
+
+\usepackage{mathptm}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {figs/} }
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+%\bibliographystyle{splncs03}
+\usetikzlibrary{shapes.misc, positioning}
+\DeclareMathOperator{\atantwo}{atan2}
+\begin{document}
+
+\section*{Haversine Formlen}
+
+\begin{align*}
+  \mbox{GPS posisjon 1} & : (\mbox{lattitude}_1,\mbox{longitude}_1) \\
+  \mbox{GPS posisjon 2} & : (\mbox{lattitude}_2,\mbox{longitude}_2) \\
+\end{align*}
+
+\begin{align*}
+R & = 6371000 \mbox{ meter (jordens gjennomsnitsradius)} \\
+\end{align*}
+
+
+
+\begin{align*}
+  \varphi_1 & = \mbox{lattitude}_1 \mbox{ (omregnet til radianer)} \\
+  \varphi_2 & = \mbox{latitude}_2 \mbox{ (omregnet til radianer)} \\
+  \Delta \varphi & = \mbox{latitude}_2 - \mbox{latitude}_1 \mbox{ (omregnet til radianer)} \\
+  \Delta \lambda &  = \mbox{longitude}_2 - \mbox{longitude}_1 \mbox{ (omregnet til radianer)} \\
+  a & = (\sin{(\Delta \varphi / 2)})^2 + \cos{\varphi_1} \cdot \cos{\varphi_2} \cdot (\sin{(\Delta \lambda / 2))^2} \\
+  c & = 2 \cdot \atantwo(\sqrt{a},\sqrt{(1-a)} \\
+  d & = R \cdot c 
+\end{align*}
+
+\end{document}
